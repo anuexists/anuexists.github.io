@@ -446,6 +446,15 @@ main {
 
 .social-item .social-link:hover { color: var(--light-gray); }
 
+.social-item .social-link svg {
+  color: var(--white-1) !important;
+  fill: var(--white-1) !important;
+}
+
+.social-item .social-link svg path {
+  fill: var(--white-1) !important;
+}
+
 
 
 
@@ -793,6 +802,14 @@ main {
   font-size: var(--fs-6);
   line-height: 1.3;
   margin-bottom: 7px;
+}
+
+.timeline-item-subtitle {
+  font-size: var(--fs-7);
+  line-height: 1.3;
+  margin-bottom: 7px;
+  color: var(--light-gray-70);
+  font-weight: var(--fw-300);
 }
 
 .timeline-list span {
