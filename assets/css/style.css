@@ -852,6 +852,12 @@ main {
  */
 
 .skills-title { margin-bottom: 20px; }
+.skills-category { padding: 10px;
+margin-bottom: 20px; 
+color: var(--light-gray);
+font-weight: var(--fw-300);
+line-height: 1.6;
+}
 
 .skills-list { padding: 20px; }
 
