@@ -1,0 +1,10 @@
+node_modules/
+server.log
+server2.log
+test_nav.js
+test_nav.html
+fix_nav.js
+fix_modal_close.js
+fix_script.js
+package.json
+package-lock.json

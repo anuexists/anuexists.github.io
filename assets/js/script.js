@@ -34,6 +34,7 @@ const testimonialsModalFunc = function () {
 }
 
 // add click event to all modal items
+if (testimonialsItem.length > 0) {
 for (let i = 0; i < testimonialsItem.length; i++) {
 
   testimonialsItem[i].addEventListener("click", function () {
@@ -48,10 +49,11 @@ for (let i = 0; i < testimonialsItem.length; i++) {
   });
 
 }
+}
 
 // add click event to modal close button
-modalCloseBtn.addEventListener("click", testimonialsModalFunc);
-overlay.addEventListener("click", testimonialsModalFunc);
+if (modalCloseBtn) { modalCloseBtn.addEventListener("click", testimonialsModalFunc); }
+if (overlay) { overlay.addEventListener("click", testimonialsModalFunc); }
 
 
 
@@ -61,7 +63,7 @@ const selectItems = document.querySelectorAll("[data-select-item]");
 const selectValue = document.querySelector("[data-selecct-value]");
 const filterBtn = document.querySelectorAll("[data-filter-btn]");
 
-select.addEventListener("click", function () { elementToggleFunc(this); });
+if (select) { select.addEventListener("click", function () { elementToggleFunc(this); }); }
 
 // add event in all select items
 for (let i = 0; i < selectItems.length; i++) {
@@ -97,6 +99,7 @@ const filterFunc = function (selectedValue) {
 // add event in all filter button items for large screen
 let lastClickedBtn = filterBtn[0];
 
+if (filterBtn.length > 0) {
 for (let i = 0; i < filterBtn.length; i++) {
 
   filterBtn[i].addEventListener("click", function () {
@@ -112,6 +115,7 @@ for (let i = 0; i < filterBtn.length; i++) {
   });
 
 }
+}
 
 
 
@@ -121,6 +125,7 @@ const formInputs = document.querySelectorAll("[data-form-input]");
 const formBtn = document.querySelector("[data-form-btn]");
 
 // add event to all form input field
+if (formInputs.length > 0) {
 for (let i = 0; i < formInputs.length; i++) {
   formInputs[i].addEventListener("input", function () {
 
@@ -133,6 +138,7 @@ for (let i = 0; i < formInputs.length; i++) {
 
   });
 }
+}
 
 
 
@@ -144,14 +150,15 @@ const pages = document.querySelectorAll("[data-page]");
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
 
-    for (let i = 0; i < pages.length; i++) {
-      if (this.innerHTML.trim().toLowerCase() === pages[i].dataset.page) {
-        pages[i].classList.add("active");
-        navigationLinks[i].classList.add("active");
+    const clickedPage = this.innerHTML.trim().toLowerCase();
+    for (let j = 0; j < pages.length; j++) {
+      if (clickedPage === pages[j].dataset.page) {
+        pages[j].classList.add("active");
+        navigationLinks[j].classList.add("active");
         window.scrollTo(0, 0);
       } else {
-        pages[i].classList.remove("active");
-        navigationLinks[i].classList.remove("active");
+        pages[j].classList.remove("active");
+        navigationLinks[j].classList.remove("active");
       }
     }
 
