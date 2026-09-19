@@ -61,7 +61,7 @@ const selectItems = document.querySelectorAll("[data-select-item]");
 const selectValue = document.querySelector("[data-selecct-value]");
 const filterBtn = document.querySelectorAll("[data-filter-btn]");
 
-if (select) { select.addEventListener("click", function () { elementToggleFunc(this); }); }
+select.addEventListener("click", function () { elementToggleFunc(this); });
 
 // add event in all select items
 for (let i = 0; i < selectItems.length; i++) {
@@ -145,7 +145,7 @@ for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
 
     for (let i = 0; i < pages.length; i++) {
-      if (this.textContent.toLowerCase().trim() === pages[i].dataset.page) {
+      if (this.innerHTML.trim().toLowerCase() === pages[i].dataset.page) {
         pages[i].classList.add("active");
         navigationLinks[i].classList.add("active");
         window.scrollTo(0, 0);

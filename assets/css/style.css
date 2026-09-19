@@ -1734,12 +1734,8 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 
   .navbar-list {
-    gap: 15px;
+    gap: 30px;
     padding: 0 20px;
-  }
-
-  .navbar-item {
-    transition: all 0.3s ease;
   }
 
   .navbar-link { font-weight: var(--fw-500); }
@@ -1907,66 +1903,19 @@ textarea.form-input::-webkit-resizer { display: none; }
   .timeline-text { max-width: 700px; }
 
 }
-/* Custom Macbook-style Navbar */
-@media (min-width: 1024px) {
-  .navbar-list {
-    gap: 15px !important;
-  }
-
-  .navbar-link {
-    transition: all 0.3s ease !important;
-    padding: 10px 5px !important;
-    font-size: 13px !important;
-    color: var(--light-gray-70) !important;
-  }
-
-  .navbar-link:hover, .navbar-link.active {
-    font-size: 16px !important;
-    color: var(--orange-yellow-crayola) !important;
-    transform: scale(1.1);
-  }
-}
-
-@media (min-width: 1250px) {
-  .navbar-list {
-    gap: 30px !important;
-  }
-  .navbar-link {
-    font-size: 15px !important;
-    padding: 20px 7px !important;
-  }
-  .navbar-link:hover, .navbar-link.active {
-    font-size: 18px !important;
-  }
-}
-
-/* Fix overlapping title */
-@media (min-width: 1024px) and (max-width: 1250px) {
-  .navbar {
-    padding: 0 10px !important;
-  }
-  .navbar-list {
-    gap: 10px !important;
-    padding: 0 10px !important;
-  }
-  .navbar-link {
-    font-size: 12px !important;
-  }
-  .navbar-link:hover, .navbar-link.active {
-    font-size: 14px !important;
-  }
-}
-
 /* Macbook dock style hover effect */
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .navbar-list {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-end;
+    gap: 10px !important;
   }
 
   .navbar-link {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
     transform-origin: bottom center;
+    padding: 10px 8px !important;
+    font-size: 13px !important;
   }
 
   .navbar-item:hover .navbar-link {
